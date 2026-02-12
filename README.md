@@ -32,7 +32,11 @@ codex-skills-vault/
 ## Quick Start
 
 1. Install via OpenAI Skill Installer:
-   - `scripts/install-skill-from-github.py --repo cangiremir/codex-skills-vault --path skills/atomic-execution-engine`
+
+   ```bash
+   scripts/install-skill-from-github.py --repo cangiremir/codex-skills-vault --path skills/atomic-execution-engine
+   ```
+
 2. Or copy a skill folder into your Codex skills directory.
 3. Ensure each skill has a `SKILL.md` with `name` and `description` frontmatter.
 4. (Recommended) Provide `agents/openai.yaml` for UI metadata.
