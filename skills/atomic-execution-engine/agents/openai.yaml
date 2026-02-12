@@ -1,0 +1,6 @@
+interface:
+  display_name: "Atomic Execution Engine"
+  short_description: "Turn plans into sequential, single-unit PRs"
+  default_prompt: "Use $atomic-execution-engine to execute this plan as sequential PRs."
+policy:
+  allow_implicit_invocation: true
