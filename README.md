@@ -31,10 +31,10 @@ codex-skills-vault/
 
 ## Quick Start
 
-1. Install via OpenAI Skill Installer:
+1. Install via Codex CLI:
 
    ```bash
-   scripts/install-skill-from-github.py --repo cangiremir/codex-skills-vault --path skills/atomic-execution-engine
+   $skill-installer https://github.com/cangiremir/codex-skills-vault/tree/master/skills/atomic-execution-engine
    ```
 
 2. Or copy a skill folder into your Codex skills directory.
