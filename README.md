@@ -1,11 +1,15 @@
-# Codex Skills Repository
+# Codex Skills Vault
 
-A general-purpose repository for curated Codex skills. Each skill lives in its own folder under `skills/` and contains the required `SKILL.md` plus any optional resources (scripts, references, assets) needed for repeatable workflows.
+Curated Codex skills for structured, repeatable workflows.
 
-## Repository Structure
+## Overview
+
+This repository hosts reusable Codex skills. Each skill lives in its own folder under `skills/` and contains the required `SKILL.md` plus any optional resources (scripts, references, assets) used to make workflows consistent and reviewable.
+
+## Repository Layout
 
 ```
-skills-repo/
+codex-skills-vault/
 ├── README.md
 └── skills/
     └── atomic-execution-engine/
@@ -19,32 +23,26 @@ skills-repo/
             └── slugify_unit.py
 ```
 
-## Skills
+## Included Skills
 
-### atomic-execution-engine
-Converts high-level implementation plans into sequential, coherent PRs with one unit per PR, enforcing a review cycle before progressing to the next unit.
+| Skill | Description | Resources |
+| --- | --- | --- |
+| `atomic-execution-engine` | Converts high-level implementation plans into sequential, coherent PRs with one unit per PR. | `scripts/slugify_unit.py`, `references/review-cycle.md` |
 
-**Key workflow guarantees**
-- One coherent unit per PR; no unrelated batching.
-- Required Codex review loop until no valid suggestions remain.
-- Finalize PR only after CI/tests pass and the unit is coherent.
+## Quick Start
 
-**Bundled resources**
-- `skills/atomic-execution-engine/scripts/slugify_unit.py`: Generates `codex/<unit-slug>` branch names from unit titles.
-- `skills/atomic-execution-engine/references/review-cycle.md`: Checklist for handling review suggestions.
+1. Install via OpenAI Skill Installer:
+   - `scripts/install-skill-from-github.py --repo cangiremir/codex-skills-vault --path skills/atomic-execution-engine`
+2. Or copy a skill folder into your Codex skills directory.
+3. Ensure each skill has a `SKILL.md` with `name` and `description` frontmatter.
+4. (Recommended) Provide `agents/openai.yaml` for UI metadata.
 
 ## Adding New Skills
 
-1. Create a new folder under `skills/<skill-name>`.
-2. Add `SKILL.md` with required YAML frontmatter (`name`, `description`).
-3. Add `agents/openai.yaml` with UI metadata.
-4. Add optional `scripts/`, `references/`, or `assets/` as needed.
-
-## Usage Notes
-
-- Keep `SKILL.md` concise and procedural; move long reference material into `references/`.
-- Only include optional folders when they add concrete value.
-- Avoid unrelated batching within a single skill.
+- Use short, hyphenated names (e.g., `plan-executor`).
+- Keep `SKILL.md` concise and procedural.
+- Move long reference material into `references/`.
+- Only add `scripts/` and `assets/` when they add concrete value.
 
 ## License
 
